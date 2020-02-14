@@ -1,0 +1,14 @@
+<header>
+  <nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+  <div><a href="" class="navbar-brand">API-CLIENT</a></div>
+  
+  <ul class="navbar-nav">
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/" class="nav-link">View Person</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/addPerson" class="nav-link">Add New Person</a></li>
+    <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+    <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
+
+  </ul>
+  </nav>
+  
+  </header>

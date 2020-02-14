@@ -1,0 +1,63 @@
+<div class="container" style="width: 50%;">
+  <div *ngIf="isSave" class="alert alert-success" role="alert">
+    Registration successful
+  </div>
+  <div *ngIf="isFail" class="alert alert-danger" role="alert">
+    Registration Faild
+  </div>
+
+  <h2>Person Register</h2>
+  <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+   
+    <input type="text" formControlName="firstName" [(ngModel)]="personForm.firstName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.firstName.errors }" />
+      <div *ngIf="submitted && form.firstName.errors" class="invalid-feedback">
+        <div *ngIf="form.firstName.errors.required">First Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" formControlName="lastName" [(ngModel)]="personForm.lastName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.lastName.errors }" />
+      <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+        <div *ngIf="form.lastName.errors.required">Last Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="username">Age</label>
+      <input type="number" formControlName="age" [(ngModel)]="personForm.age" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.age.errors }" />
+      <div *ngIf="submitted && form.age.errors" class="invalid-feedback">
+        <div *ngIf="form.age.errors.required">Username is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="favouriteColor">Favourite Color</label>
+      <input type="text" formControlName="favouriteColor" [(ngModel)]="personForm.favouriteColor" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && form.favouriteColor.errors }" />
+      <div *ngIf="submitted && form.favouriteColor.errors" class="invalid-feedback">
+        <div *ngIf="form.favouriteColor.errors.required">Favourite Color is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="hobby">Hobby</label>
+      <tag-input [formControlName]="'hobby'" [(ngModel)]="items" name="items" placeholder="Insert a new hobby">
+      </tag-input>
+
+      <div *ngIf="submitted && form.hobby.errors" class="invalid-feedback">
+        <div *ngIf="form.hobby.errors.required">Hobby is required</div>
+      </div>
+    </div>
+    <input type="hidden" formControlName="id" [(ngModel)]="personForm.id">
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Register</button>
+      <img *ngIf="loading"
+        src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <a [routerLink]="['']" class="btn btn-link">Cancel</a>
+    </div>
+  </form>
+
+
+</div>
