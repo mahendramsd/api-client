@@ -98,7 +98,7 @@ export class AddPersonComponent implements OnInit {
       lastName: this.personForm.value.lastName,
       age: this.personForm.value.age,
       favouriteColor: this.personForm.value.favouriteColor,
-      hobby: hobbies
+      hobby: hobbies.toString()
     }
     this.loading = true;
     this.httpClientService.addPerson(person)
