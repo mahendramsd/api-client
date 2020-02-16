@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  endPoinUrl : 'http://localhost:8080/api',
-  username: 'user',
-  password : 'user'
+  endPoinUrl : 'http://35.202.2.27:8080/api'
 };
 
 /*

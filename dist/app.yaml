@@ -1,0 +1,9 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+- url: /
+ static_files: api-client/index.html
+ upload: api-client/index.html
+- url: /
+static_dir: api-client

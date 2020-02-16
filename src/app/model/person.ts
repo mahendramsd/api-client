@@ -4,5 +4,5 @@ export class Person {
     public lastName: string;
     public age: string;
     public favouriteColor: string;
-    public hobby: string;
+    public hobby: string    ;
 }
